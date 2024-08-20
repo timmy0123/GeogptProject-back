@@ -11,19 +11,19 @@ def get_prompt():
                         {
                         "type": "Marker",
                         "name": "Marker 1",
-                        "location": [10.0, 10.0],
+                        "location": [latitude, longitude],
                         "description": "This is marker 1"
                         },
                         {
                         "type": "Polygon",
                         "name": "Polygon 1",
-                        "location": [[10.0, 10.0], [10.0, 20.0], [20.0, 20.0], [20.0, 10.0]],
+                        "location": [[latitude, longitude], [latitude, longitude], [latitude, longitude], [latitude, longitude]],
                         "description": "This is polygon 1"
                         },
                         {
                         "type": "Polyline",
                         "name": "Polyline 1",
-                        "location": [[10.0, 10.0], [10.0, 20.0], [20.0, 20.0], [20.0, 10.0]],
+                        "location": [[latitude, longitude], [latitude, longitude], [latitude, longitude], [latitude, longitude]],
                         "description": "This is polyline 1"
                         }
                     ]

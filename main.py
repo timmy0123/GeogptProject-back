@@ -35,15 +35,15 @@ app.add_middleware(
 async def chat(thread_id: str = Query(..., description="The thread ID"), user_input: str = Query(..., description="The user input"), file: Optional[UploadFile] = None):
     user_input = user_input
     config = {"configurable": {"thread_id": thread_id}}
-
     if not thread_id:
         raise HTTPException(status_code=404, detail="Thread not found")
     else:
         if file is not None:
             # Process the file
             contents = await file.read()
+            contents = contents.decode("utf-8")
             user_input += '\n' + \
-                f"filename: {file.filename}\n" + contents.decode("utf-8")
+                f"filename: {file.filename}\n" + contents
         if thread_id in thread_record:
             message = {"messages": [HumanMessage(content=user_input)]}
         else:
